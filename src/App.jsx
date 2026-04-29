@@ -62,5 +62,7 @@ function App() {
         </div>
     );
 }
-
+git add .
+    git commit -m "Added CommentCard"
+git push
 export default App;
