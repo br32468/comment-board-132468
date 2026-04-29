@@ -1,37 +1,34 @@
-import reactLogo from "../assets/react.svg";
+import { useState } from 'react';
 
-return (
-    <>
-        <div>
-            <a href="https://vite.dev" target="_blank">
-                <img src={viteLogo} className="logo" alt="Vite logo" />
-            </a>
-            <a href="https://react.dev" target="_blank">
-                <img src={reactLogo} className="logo react" alt="React logo" />
-            </a>
+function RegisterComment({ onAdd, nameRef }) {
+    const [form, setForm] = useState({
+        name: '',
+        body: '',
+        rating: 1,
+        approved: false
+    });
+    const [err, setErr] = useState('');
+
+    const handleSubmit = () => {
+        if (!form.name.trim()) { setErr('Name must not be empty'); return; }
+        if (form.rating < 1 || form.rating > 5) { setErr('Rating must be between 1 and 5'); return; }
+        setErr('');
+        onAdd({ ...form, rating: Number(form.rating) });
+        setForm({ name: '', body: '', rating: 1, approved: false });
+        if (nameRef.current) nameRef.current.focus();
+    };
+
+    return (
+        <div style={{ marginTop: '40px' }}>
+            <h2>Register New Comment</h2>
+            {err && <p style={{ color: 'red' }}>{err}</p>}
+            <input ref={nameRef} placeholder="Name" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} /><br /><br />
+            <textarea placeholder="Body" value={form.body} onChange={e => setForm({ ...form, body: e.target.value })} /><br /><br />
+            <input type="number" placeholder="Rating (1-5)" value={form.rating} onChange={e => setForm({ ...form, rating: e.target.value })} /><br /><br />
+            <label><input type="checkbox" checked={form.approved} onChange={e => setForm({ ...form, approved: e.target.checked })} /> Approved</label><br /><br />
+            <button onClick={handleSubmit}>Register</button>
         </div>
-        <h1>Vite + React</h1>
-        <div className="card">
-            <button onClick={() => setCount((count) => count + 1)}>
-                count is {count}
-            </button>
-            <p>
-{/*                Edit <code>src/App.jsx</code> and save to test HMR*/}
-{/*            </p>*/}
+    );
+}
 
-
-{/*            Edit<code>App.jsx</code>*/}
-
-{/*            save to test HMR*/}
-
-{/*            <code>App.jsx</code>*/}
-
-
-{/*            <div renamef*/}
-{/*        </div>*/}
-{/*        <p className="read-the-docs">*/}
-{/*            Click on the Vite and React logos to learn more*/}
-{/*        </p>*/}
-{/*    </>*/}
-{/*)*/}
-{/*}*/}
+export default RegisterComment;
