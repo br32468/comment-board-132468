@@ -5,8 +5,8 @@
 
 
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
-import CommentCard from './components/CommentCard.jsx;
-import RegisterComment from './components/RegisterComment.jsx;
+import CommentCard from './components/CommentCard.jsx';
+import RegisterComment from './components/RegisterComment.jsx';
 
 // Student: Besir Rexhepi | ID: 132468
 
@@ -75,6 +75,3 @@ export default App;
 
 
 
-git add .
-    git commit -m "Added CommentCard"
-git push

@@ -8,8 +8,8 @@ function CommentCard({ comment }) {
             <p><strong>Body:</strong> {comment.body}</p>
             <p><strong>Rating:</strong> {comment.rating}</p>
             <p><strong>Approved:</strong> {comment.approved ? 'Yes' : 'No'}</p>
-            {comment.approved === true && <p style={{ color: 'green', fontWeight: 'bold' }}>✅ Approved</p>}
-            {comment.rating === 5 && <p style={{ color: 'blue', fontWeight: 'bold' }}>⭐ Top rated</p>}
+            {comment.approved === true && <p style={{ color: 'green', fontWeight: 'bold' }}> Approved</p>}
+            {comment.rating === 5 && <p style={{ color: 'blue', fontWeight: 'bold' }}> Top rated</p>}
         </div>
 
 
