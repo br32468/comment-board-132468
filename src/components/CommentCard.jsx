@@ -11,6 +11,9 @@ function CommentCard({ comment }) {
             {comment.approved === true && <p style={{ color: 'green', fontWeight: 'bold' }}>✅ Approved</p>}
             {comment.rating === 5 && <p style={{ color: 'blue', fontWeight: 'bold' }}>⭐ Top rated</p>}
         </div>
+
+
+
     );
 }
 

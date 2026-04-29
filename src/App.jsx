@@ -1,8 +1,14 @@
+
+// useRef and useCallback for interactivity
+
+
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import CommentCard from './components/CommentCard.jsx;
 import RegisterComment from './components/RegisterComment.jsx;
 
 // Student: Besir Rexhepi | ID: 132468
+
+
 
 function App() {
     const [comments, setComments] = useState([]);
