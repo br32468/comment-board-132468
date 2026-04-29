@@ -1,6 +1,8 @@
 
 // useRef and useCallback for interactivity
 
+// useMemo for average rating
+
 
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import CommentCard from './components/CommentCard.jsx;
