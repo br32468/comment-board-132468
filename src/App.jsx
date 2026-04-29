@@ -8,7 +8,7 @@ import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import CommentCard from './components/CommentCard.jsx';
 import RegisterComment from './components/RegisterComment.jsx';
 
-// Student: Besir Rexhepi | ID: 132468
+// Student: Besir Rexhepi | ID: 132468...
 
 
 
